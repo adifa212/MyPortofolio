@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ElectroPortfolio - Electrical Engineer</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#5D5CDE',
+                        secondary: '#3F3D56',
+                        accent: '#F97316',
+                        light: '#FFFFFF',
+                        dark: '#181818',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="font-sans bg-light dark:bg-dark text-gray-800 dark:text-gray-200 transition-colors duration-300">
+    <!-- Header/Navbar -->
+    <header class="sticky top-0 z-50 bg-white/90 dark:bg-dark/90 backdrop-blur-sm shadow-sm">
+        <nav class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold text-primary flex items-center">
+                <i class="fas fa-bolt mr-2"></i>
+                <span>ElectroPortfolio</span>
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex space-x-6">
+                <a href="#home" class="hover:text-primary transition-colors">Home</a>
+                <a href="#about" class="hover:text-primary transition-colors">About</a>
+                <a href="#projects" class="hover:text-primary transition-colors">Projects</a>
+                <a href="#skills" class="hover:text-primary transition-colors">Skills</a>
+                <a href="#contact" class="hover:text-primary transition-colors">Contact</a>
+            </div>
+            
+            <div class="flex items-center space-x-4">
+                <!-- Dark Mode Toggle -->
+                <button id="darkModeToggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                    <i class="fas fa-moon dark:hidden"></i>
+                    <i class="fas fa-sun hidden dark:block"></i>
+                </button>
+                
+                <!-- Mobile Menu Toggle -->
+                <button id="mobileMenuToggle" class="md:hidden p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+        
+        <!-- Mobile Navigation -->
+        <div id="mobileMenu" class="md:hidden hidden bg-white dark:bg-dark border-t dark:border-gray-700 transition-all duration-300">
+            <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+                <a href="#home" class="py-2 hover:text-primary transition-colors">Home</a>
+                <a href="#about" class="py-2 hover:text-primary transition-colors">About</a>
+                <a href="#projects" class="py-2 hover:text-primary transition-colors">Projects</a>
+                <a href="#skills" class="py-2 hover:text-primary transition-colors">Skills</a>
+                <a href="#contact" class="py-2 hover:text-primary transition-colors">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="py-12 md:py-20 relative overflow-hidden">
+            <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="order-2 md:order-1">
+                    <h1 class="text-3xl md:text-5xl font-bold mb-4">
+                        Hello, I'm <span class="text-primary">Ahmad</span> <br>
+                        <span class="text-2xl md:text-4xl">Electrical Engineer</span>
+                    </h1>
+                    <p class="text-lg mb-6 text-gray-600 dark:text-gray-400">
+                        Specialized in Power Systems, Embedded Systems, and IoT Solutions
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#projects" class="bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors">
+                            View Projects
+                        </a>
+                        <a href="#" class="bg-white dark:bg-gray-800 border border-primary text-primary px-6 py-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                            Unduh CV
+                        </a>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2 flex justify-center">
+                    <img src="https://placehold.co/500x400/5D5CDE/FFFFFF?text=Electrical+Engineer" alt="Electrical Engineering Illustration" class="rounded-lg shadow-lg max-w-full h-auto" />
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-16 bg-gray-50 dark:bg-gray-900">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold mb-12 text-center">About Me</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+                    <div class="md:col-span-1 flex justify-center">
+                        <img src="https://placehold.co/300x300/5D5CDE/FFFFFF?text=Profile" alt="Profile" class="rounded-full border-4 border-primary max-w-[80%] md:max-w-full" />
+                    </div>
+                    
+                    <div class="md:col-span-2">
+                        <p class="text-lg mb-6">
+                            Saya adalah seorang Electrical Engineer dengan 5 tahun pengalaman di industri energi terbarukan. 
+                            Fokus utama saya adalah pada sistem tenaga, desain rangkaian, dan integrasi IoT untuk solusi smart energy. 
+                            Saya memiliki passion untuk mengembangkan sistem yang efisien dan berkelanjutan.
+                        </p>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
+                            <div class="flex items-center p-4 bg-white dark:bg-gray-800 rounded-lg shadow-sm">
+                                <i class="fas fa-microchip text-primary text-2xl mr-4"></i>
+                                <div>
+                                    <h3 class="font-bold">Circuit Design</h3>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400">Analog & Digital Electronics</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center p-4 bg-white dark:bg-gray-800 rounded-lg shadow-sm">
+                                <i class="fas fa-code text-primary text-2xl mr-4"></i>
+                                <div>
+                                    <h3 class="font-bold">PLC Programming</h3>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400">Industrial Automation</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center p-4 bg-white dark:bg-gray-800 rounded-lg shadow-sm">
+                                <i class="fas fa-bolt text-primary text-2xl mr-4"></i>
+                                <div>
+                                    <h3 class="font-bold">Power Distribution</h3>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400">Smart Grid Solutions</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center p-4 bg-white dark:bg-gray-800 rounded-lg shadow-sm">
+                                <i class="fas fa-wifi text-primary text-2xl mr-4"></i>
+                                <div>
+                                    <h3 class="font-bold">IoT Integration</h3>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400">Connected Systems</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-16">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold mb-12 text-center">Recent Projects</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Project 1 -->
+                    <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md transition-transform hover:scale-[1.02]">
+                        <img src="https://placehold.co/600x300/5D5CDE/FFFFFF?text=Smart+Grid+Project" alt="Smart Grid Project" class="w-full h-48 object-cover" />
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Smart Grid Monitoring System</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-4">
+                                Development of a real-time monitoring system for power distribution networks 
+                                with predictive maintenance capabilities.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm">Arduino</span>
+                                <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm">MQTT</span>
+                                <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full text-sm">React</span>
+                            </div>
+                            <a href="#" class="text-primary hover:underline font-medium inline-flex items-center">
+                                View Details <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 2 -->
+                    <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md transition-transform hover:scale-[1.02]">
+                        <img src="https://placehold.co/600x300/5D5CDE/FFFFFF?text=Solar+Power+System" alt="Solar Power System" class="w-full h-48 object-cover" />
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Solar Power Optimization</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-4">
+                                Design and implementation of an algorithm to optimize energy harvesting 
+                                from solar panels in varied weather conditions.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-3 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 rounded-full text-sm">MATLAB</span>
+                                <span class="px-3 py-1 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 rounded-full text-sm">Python</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-full text-sm">Hardware Design</span>
+                            </div>
+                            <a href="#" class="text-primary hover:underline font-medium inline-flex items-center">
+                                View Details <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 3 -->
+                    <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md transition-transform hover:scale-[1.02]">
+                        <img src="https://placehold.co/600x300/5D5CDE/FFFFFF?text=Industrial+Automation" alt="Industrial Automation" class="w-full h-48 object-cover" />
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Industrial Control System</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-4">
+                                PLC-based control system for manufacturing plant with 
+                                remote monitoring and emergency shutdown protocols.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-3 py-1 bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 rounded-full text-sm">PLC</span>
+                                <span class="px-3 py-1 bg-teal-100 dark:bg-teal-900 text-teal-800 dark:text-teal-200 rounded-full text-sm">SCADA</span>
+                                <span class="px-3 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 rounded-full text-sm">HMI Design</span>
+                            </div>
+                            <a href="#" class="text-primary hover:underline font-medium inline-flex items-center">
+                                View Details <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 4 -->
+                    <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md transition-transform hover:scale-[1.02]">
+                        <img src="https://placehold.co/600x300/5D5CDE/FFFFFF?text=PCB+Design" alt="PCB Design" class="w-full h-48 object-cover" />
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Custom PCB for IoT Sensors</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-4">
+                                Design and fabrication of a custom PCB for low-power IoT sensor nodes 
+                                with integrated power management.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm">Eagle CAD</span>
+                                <span class="px-3 py-1 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 rounded-full text-sm">Arduino</span>
+                                <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm">ESP32</span>
+                            </div>
+                            <a href="#" class="text-primary hover:underline font-medium inline-flex items-center">
+                                View Details <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-16 bg-gray-50 dark:bg-gray-900">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold mb-12 text-center">Technical Skills</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-6">Hardware & Systems</h3>
+                        
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-medium">Circuit Analysis</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+                                    <div class="bg-blue-600 h-2.5 rounded-full" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-medium">Power Systems</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+                                    <div class="bg-blue-600 h-2.5 rounded-full" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-medium">PCB Design</span>
+                                    <span>80%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+                                    <div class="bg-blue-600 h-2.5 rounded-full" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-medium">Control Systems</span>
+                                    <span>75%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+                                    <div class="bg-blue-600 h-2.5 rounded-full" style="width: 75%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-semibold mb-6">Software & Programming</h3>
+                        
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-medium">MATLAB</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+                                    <div class="bg-green-600 h-2.5 rounded-full" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-medium">Embedded C</span>
+                                    <span>80%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+                                    <div class="bg-green-600 h-2.5 rounded-full" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-medium">Python</span>
+                                    <span>75%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+                                    <div class="bg-green-600 h-2.5 rounded-full" style="width: 75%"></div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-medium">PLC Programming</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+                                    <div class="bg-green-600 h-2.5 rounded-full" style="width: 85%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="md:col-span-2 mt-8">
+                        <h3 class="text-xl font-semibold mb-6">Tools & Technologies</h3>
+                        
+                        <div class="flex flex-wrap gap-3">
+                            <span class="px-4 py-2 bg-white dark:bg-gray-800 rounded-lg shadow-sm text-gray-800 dark:text-gray-200 font-medium">
+                                <i class="fas fa-microchip text-primary mr-2"></i>Arduino
+                            </span>
+                            <span class="px-4 py-2 bg-white dark:bg-gray-800 rounded-lg shadow-sm text-gray-800 dark:text-gray-200 font-medium">
+                                <i class="fas fa-microchip text-primary mr-2"></i>Raspberry Pi
+                            </span>
+                            <span class="px-4 py-2 bg-white dark:bg-gray-800 rounded-lg shadow-sm text-gray-800 dark:text-gray-200 font-medium">
+                                <i class="fas fa-plug text-primary mr-2"></i>EAGLE CAD
+                            </span>
+                            <span class="px-4 py-2 bg-white dark:bg-gray-800 rounded-lg shadow-sm text-gray-800 dark:text-gray-200 font-medium">
+                                <i class="fas fa-network-wired text-primary mr-2"></i>Siemens PLC
+                            </span>
+                            <span class="px-4 py-2 bg-white dark:bg-gray-800 rounded-lg shadow-sm text-gray-800 dark:text-gray-200 font-medium">
+                                <i class="fas fa-project-diagram text-primary mr-2"></i>SCADA
+                            </span>
+                            <span class="px-4 py-2 bg-white dark:bg-gray-800 rounded-lg shadow-sm text-gray-800 dark:text-gray-200 font-medium">
+                                <i class="fas fa-solar-panel text-primary mr-2"></i>Solar System Design
+                            </span>
+                            <span class="px-4 py-2 bg-white dark:bg-gray-800 rounded-lg shadow-sm text-gray-800 dark:text-gray-200 font-medium">
+                                <i class="fas fa-code text-primary mr-2"></i>IoT Platforms
+                            </span>
+                            <span class="px-4 py-2 bg-white dark:bg-gray-800 rounded-lg shadow-sm text-gray-800 dark:text-gray-200 font-medium">
+                                <i class="fas fa-chart-line text-primary mr-2"></i>LabVIEW
+                            </span>
+                            <span class="px-4 py-2 bg-white dark:bg-gray-800 rounded-lg shadow-sm text-gray-800 dark:text-gray-200 font-medium">
+                                <i class="fas fa-bolt text-primary mr-2"></i>Electrical CAD
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-16">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold mb-12 text-center">Get In Touch</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-6">Send Me a Message</h3>
+                        
+                        <form id="contactForm" class="space-y-4">
+                            <div>
+                                <label for="name" class="block mb-2 font-medium">Nama</label>
+                                <input 
+                                    type="text" 
+                                    id="name" 
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-base focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all"
+                                    placeholder="Masukkan nama anda"
+                                    required
+                                >
+                            </div>
+                            
+                            <div>
+                                <label for="email" class="block mb-2 font-medium">Email</label>
+                                <input 
+                                    type="email" 
+                                    id="email" 
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-base focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all"
+                                    placeholder="email@example.com"
+                                    required
+                                >
+                            </div>
+                            
+                            <div>
+                                <label for="message" class="block mb-2 font-medium">Pesan</label>
+                                <textarea 
+                                    id="message" 
+                                    rows="4" 
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-base focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all"
+                                    placeholder="Tuliskan pesan anda disini..."
+                                    required
+                                ></textarea>
+                            </div>
+                            
+                            <button 
+                                type="submit" 
+                                class="w-full bg-primary text-white font-medium py-3 px-6 rounded-lg hover:bg-primary/90 transition-colors relative overflow-hidden group"
+                            >
+                                <span class="relative z-10">Kirim Pesan</span>
+                                <span class="absolute left-0 top-0 h-full w-0 bg-white/20 transition-all duration-300 group-hover:w-full"></span>
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-semibold mb-6">Contact Information</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="flex items-center justify-center bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                                    <i class="fas fa-map-marker-alt text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium">Location</h4>
+                                    <p class="text-gray-600 dark:text-gray-400">Jakarta, Indonesia</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="flex items-center justify-center bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                                    <i class="fas fa-envelope text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium">Email</h4>
+                                    <p class="text-gray-600 dark:text-gray-400">ahmad@elektro.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="flex items-center justify-center bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                                    <i class="fas fa-phone text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium">Phone</h4>
+                                    <p class="text-gray-600 dark:text-gray-400">+62 812 3456 7890</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-10">
+                            <h3 class="text-xl font-semibold mb-6">Connect With Me</h3>
+                            
+                            <div class="flex space-x-4">
+                                <a href="#" class="bg-primary bg-opacity-10 hover:bg-opacity-20 p-3 rounded-full text-primary transition-all">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="#" class="bg-primary bg-opacity-10 hover:bg-opacity-20 p-3 rounded-full text-primary transition-all">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#" class="bg-primary bg-opacity-10 hover:bg-opacity-20 p-3 rounded-full text-primary transition-all">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="bg-primary bg-opacity-10 hover:bg-opacity-20 p-3 rounded-full text-primary transition-all">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 dark:bg-gray-900 py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <a href="#" class="text-xl font-bold text-primary flex items-center">
+                        <i class="fas fa-bolt mr-2"></i>
+                        <span>ElectroPortfolio</span>
+                    </a>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">
+                        &copy; 2023 Ahmad. All rights reserved.
+                    </p>
+                </div>
+                
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">
+                        Privacy Policy
+                    </a>
+                    <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">
+                        Terms of Service
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll to top button -->
+        <button id="scrollToTop" class="fixed bottom-6 right-6 bg-primary text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-primary/90 focus:outline-none">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        mobileMenuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu when clicking on a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+        
+        // Dark mode toggle
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        
+        // Check for saved theme preference or use the system preference
+        if (localStorage.getItem('darkMode') === 'true' || 
+            (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+        
+        // Dark mode toggle event
+        darkModeToggle.addEventListener('click', () => {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('darkMode', 'false');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('darkMode', 'true');
+            }
+        });
+        
+        // Listen for system preference changes
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (!localStorage.getItem('darkMode')) {
+                if (event.matches) {
+                    document.documentElement.classList.add('dark');
+                } else {
+                    document.documentElement.classList.remove('dark');
+                }
+            }
+        });
+        
+        // Scroll to top button
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollToTopBtn.classList.remove('opacity-0', 'invisible');
+                scrollToTopBtn.classList.add('opacity-100', 'visible');
+            } else {
+                scrollToTopBtn.classList.remove('opacity-100', 'visible');
+                scrollToTopBtn.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Contact form submission
+        const contactForm = document.getElementById('contactForm');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Here you would normally handle the form submission with AJAX
+            // For this example, we'll just show a success message
+            const formData = new FormData(contactForm);
+            
+            // Show a simple alert (in a real app, you'd use a modal or toast)
+            alert('Terima kasih! Pesan Anda telah dikirim.');
+            
+            // Reset the form
+            contactForm.reset();
+        });
+    </script>
+</body>
+</html>
